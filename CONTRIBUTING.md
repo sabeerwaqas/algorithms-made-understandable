@@ -25,6 +25,13 @@ Include the problem and why it matters, input and expected output, core intuitio
 
 Code should be readable and tested. An implementation without an explanation is not enough for this repository.
 
+## Beginner-friendly terminology
+
+- Do not assume a learner already knows an uncommon technical phrase.
+- Explain an unfamiliar term briefly at the point where it first matters. Prefer a short parenthetical explanation or an **In plain language** sentence.
+- Add reusable terms to `docs/glossary.md`, but do not make the glossary a substitute for explaining an important term in context.
+- Keep definitions concise. Add a worked example only when a short definition is not enough.
+
 ## Visual standards
 
 - Use SVG for static diagrams.
