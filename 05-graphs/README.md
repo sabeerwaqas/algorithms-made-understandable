@@ -89,7 +89,7 @@ Timestamps help reason about edge types, cycles, and topological ordering. In a 
 
 A topological ordering places every vertex u before v for each directed edge u→v. Such an ordering exists only for a DAG.
 
-**Indegree** is the number of directed edges entering a vertex. Kahn's algorithm:
+Kahn's algorithm:
 1. Compute each vertex's indegree.
 2. Enqueue all vertices with indegree zero.
 3. Remove one, append it to the order, and decrement the indegree of its outgoing neighbours.
