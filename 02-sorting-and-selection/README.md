@@ -5,6 +5,8 @@
 
 Sorting arranges values in an agreed order. It is useful for ranking, reporting, duplicate detection, searching, and preparing data for other algorithms. Selection asks for one ranked item (such as a median) without necessarily sorting every value.
 
+**Divide and conquer** means splitting a problem into smaller versions, solving those smaller problems, and combining their results. Merge Sort and Quick Sort use this general idea.
+
 ## 1. Merge Sort
 
 ### Why does it exist?
@@ -44,18 +46,18 @@ T(n) = 2T(n/2) + Θ(n)
 
 There are two recursive calls on halves of the input, and merging costs Θ(n).
 
-At each level of the recursion tree, total merge work is Θ(n). The number of levels is log₂ n because the input halves until subarrays contain one item.
+At each level of the **recursion tree** (a picture of the smaller calls made by recursive steps), total merge work is Θ(n). The number of levels is `log₂ n`: this is how many times `n` can be halved before reaching one item.
 
 Therefore T(n) = Θ(n log n).
 
 - Best, average, and worst time: Θ(n log n).
 - Auxiliary space for the usual array implementation: Θ(n).
-- Stable: yes, when equal values are taken from the left half first.
-- In-place: the usual merge implementation is not in-place.
+- **Stable:** yes. A stable sort keeps equal-valued items in their original relative order; Merge Sort does this when equal values are taken from the left half first.
+- **In-place:** no. An in-place algorithm uses only a constant amount of extra working memory; the usual array-based Merge Sort needs a temporary array.
 
 ## 3. Recurrences and selection
 
-A recurrence describes running time in terms of smaller subproblems.
+A **recurrence** is an equation that describes running time using the costs of smaller inputs. For example, `T(n) = 2T(n/2) + Θ(n)` says that the algorithm solves two half-sized problems and then does linear work to combine them.
 
 | Recurrence | Typical result | Example |
 |---|---|---|
@@ -74,7 +76,7 @@ Sorting first costs O(n log n), but selection does not require a fully sorted ar
 
 ## 4. Selection: kth smallest and median
 
-A partition operation places a pivot so values on one side are no larger and values on the other side are no smaller. The pivot's final index tells us which partition can contain the kth item.
+A **pivot** is the value chosen to divide the array. **Partitioning** rearranges values around that pivot so the required smaller and larger values end up on the appropriate sides. The pivot's final index tells us which part can contain the kth item.
 
 **Quickselect:**
 1. Choose a pivot.
@@ -90,7 +92,7 @@ The deterministic median-of-medians technique groups values, finds group medians
 
 ## 5. Binary heaps
 
-A binary heap is a complete binary tree with a heap-order property.
+A **binary heap** is a complete binary tree: every level is full except possibly the last, and the last level is filled from left to right. It also follows a **heap-order property**, which controls how each parent compares with its children.
 
 For a **max-heap**, every parent is at least as large as its children. The largest value is at the root.
 
@@ -108,7 +110,7 @@ A heap is not a binary search tree. Siblings and subtrees are not fully sorted.
 | Extract maximum | O(log n) |
 | Build heap from an array | O(n) |
 
-Bottom-up BuildHeap is O(n), not O(n log n), because most nodes are close to leaves and require very little sift-down work.
+Bottom-up BuildHeap is O(n), not O(n log n), because most nodes are close to the leaves and need only a little **sift-down** work. Sift-down means moving a value down the heap until the parent-child ordering is restored.
 
 ## 6. Heap Sort
 
@@ -152,9 +154,9 @@ Randomized pivots reduce the chance of consistently bad partitions but do not re
 
 ### Why a lower bound?
 
-An upper bound says how much work an algorithm may need. A lower bound says how much work any algorithm in a specified model must need.
+An **upper bound** describes a limit on the work of a particular algorithm. A **lower bound** says that any algorithm in a specified model must do at least that much work in the relevant case.
 
-For comparison sorting, the decision-tree argument gives Ω(n log n) comparisons in the worst case: there are n! possible input orders, and a comparison gives only a binary outcome. A binary decision tree needs at least n! leaves, so its height is at least log₂(n!) = Ω(n log n).
+For comparison sorting, the **decision-tree** argument gives Ω(n log n) comparisons in the worst case. Imagine a yes/no question tree: each comparison has two possible outcomes, and the tree must distinguish all `n!` possible input orders. It therefore needs at least `n!` leaves, giving a height of at least `log₂(n!) = Ω(n log n)`. 
 
 This bound applies to comparison-based sorting, not every possible sorting method.
 
@@ -163,7 +165,7 @@ This bound applies to comparison-based sorting, not every possible sorting metho
 Counting Sort is useful when values are integers from a reasonably small range.
 
 1. Count occurrences of each key.
-2. Convert counts to cumulative positions.
+2. Convert counts to **cumulative positions**: running totals that tell where each key's values belong in the output array.
 3. Place values into the output array.
 
 - Time: O(n + k), where k is the key range size.
@@ -177,7 +179,7 @@ For negative integers, offset each value by the minimum key before indexing the 
 
 ### Bucket Sort
 
-Distribute values into buckets, sort each bucket, then concatenate them. Its expected linear behaviour relies on assumptions such as values being spread reasonably uniformly across the bucket range. A bad distribution can put most values in one bucket and degrade performance.
+Distribute values into buckets, sort each bucket, then concatenate them. Its expected linear behaviour relies on assumptions such as values being spread reasonably evenly across the bucket range. In other words, no single bucket should receive nearly all the values. A bad distribution can put most values in one bucket and degrade performance.
 
 ### Radix Sort
 
