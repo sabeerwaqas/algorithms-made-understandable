@@ -3,7 +3,7 @@
 **VU LMS index:** 24–28  
 **Prerequisites:** sorting, priority queues, and basic proof reasoning.
 
-A greedy algorithm makes a locally attractive choice and commits to it. The key question is not whether a choice looks reasonable; it is whether that choice can be shown to belong to an optimal solution.
+A greedy algorithm makes a **local choice** — the option that looks best at the current step — and commits to it. The goal is a **global optimum**, the best complete solution. A local choice does not always lead to a global optimum, so the choice needs a proof.
 
 ## 1. Coin change
 
@@ -30,14 +30,14 @@ Compress symbols when some occur more frequently than others. A frequent symbol 
 Huffman coding builds a binary prefix tree:
 
 1. Create a leaf for each symbol, weighted by its frequency.
-2. Put the leaves in a min-priority queue.
+2. Put the leaves in a **min-priority queue**, a structure that lets us remove the node with the smallest frequency efficiently.
 3. Remove the two least-frequent nodes.
 4. Combine them into a new node whose weight is their sum.
 5. Insert the new node.
 6. Repeat until one tree remains.
 7. Label left edges 0 and right edges 1; a symbol's code is the path from root to its leaf.
 
-The code is **prefix-free**: no symbol's code is the prefix of another symbol's code. This makes decoding unambiguous.
+The code is **prefix-free**: no symbol's complete code is the beginning of another symbol's code. This makes decoding unambiguous because a decoder knows when it has read one full symbol.
 
 With a priority queue, construction takes O(n log n) for n symbols. Exact bit strings may differ when frequencies tie, while weighted cost can remain optimal.
 
@@ -47,7 +47,7 @@ With a priority queue, construction takes O(n log n) for n symbols. Exact bit st
 - Merge weights add correctly.
 - No leaf code is a prefix of another.
 - Frequent symbols tend to have shorter codes.
-- Weighted path length is the sum of frequency × code length.
+- **Weighted path length** is the total of `frequency × code length` for all symbols. It measures the total number of encoded bits contributed by the symbols, weighted by how often they occur.
 
 ## 3. Activity selection
 
@@ -83,7 +83,7 @@ Greedy rule: sort by value per unit weight (value/weight), descending. Take as m
 
 1. State the local choice precisely.
 2. Identify the property that makes the choice safe.
-3. Try an exchange argument: transform an optimal solution to include the greedy choice without making it worse.
+3. Try an **exchange argument**: start with an optimal solution and show that you can replace one of its choices with the greedy choice without making the solution worse.
 4. Search for a small counterexample.
 5. State the conditions under which the proof applies.
 
