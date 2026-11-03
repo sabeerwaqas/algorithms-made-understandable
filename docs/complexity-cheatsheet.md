@@ -1,5 +1,7 @@
 # Complexity analysis: quick reference
 
+New to a term? Check the [plain-language algorithm glossary](glossary.md).
+
 ## A reliable analysis sequence
 
 1. Identify the input-size variable (n, V, E, k, or a combination).
