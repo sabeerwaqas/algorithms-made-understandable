@@ -3,6 +3,8 @@
 **VU LMS index:** 8–16  
 **Prerequisites:** loops, arrays, recursion, and runtime analysis.
 
+**New to a term?** See the [plain-language glossary](../docs/glossary.md).
+
 Sorting arranges values in an agreed order. It is useful for ranking, reporting, duplicate detection, searching, and preparing data for other algorithms. Selection asks for one ranked item (such as a median) without necessarily sorting every value.
 
 **Divide and conquer** means splitting a problem into smaller versions, solving those smaller problems, and combining their results. Merge Sort and Quick Sort use this general idea.
