@@ -2,9 +2,9 @@
 
 **VU LMS index:** 2–7  
 **Prerequisites:** basic programming, arrays, loops, and simple coordinate geometry.  
+**Learning outcome:** explain what an algorithm is, model its cost, solve 2-D Maxima in two ways, and describe growth using asymptotic notation.
 
 **New to a term?** See the [plain-language glossary](../docs/glossary.md).
-**Learning outcome:** explain what an algorithm is, model its cost, solve 2-D Maxima in two ways, and describe growth using asymptotic notation.
 
 This chapter is the starting point. Sorting, dynamic programming, greedy algorithms, and graph algorithms all depend on the ideas here.
 
