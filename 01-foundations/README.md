@@ -22,7 +22,7 @@ A good algorithm description specifies:
 
 ### Why study algorithm design?
 
-When software becomes slow, changing syntax or buying faster hardware may not fix a poor underlying approach. A design that performs a **quadratic number of comparisons** can become impractical as input grows. In plain language, the comparison count grows roughly like `n × n`: doubling the number of input points can make the work about four times larger. Algorithm analysis helps compare designs before relying on machine-specific timings.
+When software becomes slow, changing syntax or buying faster hardware may not fix a poor underlying approach. A design that performs a **quadratic number of comparisons** can become impractical as input grows. For `n` input points, this means the comparison count can grow in proportion to `n²` (the square of the input size). Algorithm analysis helps compare designs before relying on machine-specific timings.
 
 The course focuses on two resources:
 - **Time:** how the number of basic operations grows.
@@ -116,7 +116,7 @@ MAXIMA(P):
 
 ### Why does it take quadratic time?
 
-For each of `n` points, the inner loop may inspect all `n` points. That gives up to `n × n` comparisons. This is called **quadratic growth** because the count is proportional to `n²`, not because the algorithm performs a mysterious special operation. For example, doubling `n` makes the upper count roughly four times as large.
+For each of `n` points, the inner loop may inspect all `n` points. That gives up to `n × n` comparisons. This is called **quadratic growth** because the number of comparisons is proportional to the square of the input size. In practical terms, doubling `n` can make the comparison work about four times larger.
 
 The worst case occurs when no point is dominated, for example points whose x increases while y decreases. The inner loop cannot stop early for any candidate.
 
