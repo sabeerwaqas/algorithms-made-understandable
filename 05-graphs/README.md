@@ -14,8 +14,10 @@ Graphs model relationships. A graph consists of vertices (objects) and edges (re
 - **Weighted graph:** each edge has a cost or weight.
 - **Path:** a sequence of vertices connected by edges.
 - **Cycle:** a path that returns to its starting vertex.
-- **Connected component:** a maximal set of mutually reachable vertices in an undirected graph.
-- **DAG:** directed acyclic graph.
+- **Connected component:** a group of vertices where every vertex can be reached from every other vertex in the group, and no additional vertex can be added while keeping that property.
+- **Degree:** in an undirected graph, the number of edges touching a vertex.
+- **Indegree:** in a directed graph, the number of edges pointing into a vertex.
+- **DAG:** directed acyclic graph — a directed graph with no directed cycle.
 
 ## 2. Graph representations
 
@@ -54,7 +56,7 @@ BFS and DFS share a structure:
 - add previously unseen neighbours;
 - stop when no frontier remains.
 
-For a disconnected graph, start a traversal from each still-unvisited vertex if every component must be visited.
+For a disconnected graph (one with separate groups of vertices that have no path between them), start a traversal from each still-unvisited vertex if every component must be visited.
 
 ## 5. Depth-first search (DFS) and timestamps
 
@@ -85,7 +87,7 @@ Timestamps help reason about edge types, cycles, and topological ordering. In a 
 
 A topological ordering places every vertex u before v for each directed edge u→v. Such an ordering exists only for a DAG.
 
-Kahn's algorithm:
+**Indegree** is the number of directed edges entering a vertex. Kahn's algorithm:
 1. Compute each vertex's indegree.
 2. Enqueue all vertices with indegree zero.
 3. Remove one, append it to the order, and decrement the indegree of its outgoing neighbours.
@@ -100,7 +102,7 @@ In a directed graph, a strongly connected component (SCC) is a maximal set of ve
 
 **Kosaraju's algorithm:**
 1. Run DFS on the original graph and record finishing order.
-2. Reverse every edge to construct the transpose graph.
+2. Reverse every edge to construct the **transpose graph** — the same vertices, but every directed edge points the opposite way.
 3. Process vertices in decreasing finishing time, running DFS on the transpose from each unvisited vertex.
 4. Each traversal discovers one SCC.
 
@@ -112,18 +114,18 @@ Tarjan's algorithm is another linear-time SCC method using DFS indices and low-l
 
 A spanning tree of a connected, undirected, weighted graph includes every vertex, has no cycle, and contains V−1 edges. A **minimum spanning tree (MST)** has the smallest total edge weight among all spanning trees.
 
-The generic strategy repeatedly adds a safe light edge without creating a cycle. The cut property explains why a minimum-weight edge crossing a cut is safe under the standard MST conditions.
+The generic strategy repeatedly adds a **safe light edge**: a low-weight edge that can be added without losing the possibility of an optimal spanning tree. A **cut** is a division of the vertices into two groups; the cut property explains why a minimum-weight edge crossing a cut is safe under the standard MST conditions.
 
 ## 9. Kruskal's algorithm
 
 1. Sort edges by increasing weight.
-2. Start with every vertex in its own disjoint set.
+2. Start with every vertex in its own **disjoint set** — a group that shares no vertices with any other group.
 3. Process edges from lightest to heaviest.
 4. Add an edge only when its endpoints are in different sets.
 5. Union those sets.
 6. Stop after V−1 edges for a connected graph.
 
-With sorting and a disjoint-set union structure using path compression and union by rank/size, time is O(E log E).
+With sorting and a **disjoint-set union (DSU)** structure, time is O(E log E). DSU tracks which vertices are already connected by chosen edges. **Path compression** makes future group lookups quicker; **union by rank/size** attaches the smaller or shallower group below the larger or deeper one.
 
 If the graph is disconnected, the result is a minimum spanning forest, not one spanning tree.
 
@@ -152,7 +154,7 @@ A shortest path minimizes the sum of edge weights. The right algorithm depends o
 
 Dijkstra repeatedly finalizes the unvisited vertex with the smallest tentative distance and relaxes its outgoing edges.
 
-Relaxing edge u→v with weight w means checking whether dist[u] + w is smaller than dist[v].
+**Relaxing** edge `u→v` with weight `w` means checking whether the route through `u` is shorter: compare `dist[u] + w` with the best distance currently recorded for `v`, and update it if the new route is better. That recorded value is often called a **tentative distance** because it may improve later.
 
 - With adjacency list and binary heap: O((V + E) log V).
 - Requires non-negative edge weights.
@@ -166,11 +168,11 @@ One extra pass checks whether any reachable distance can still improve. If so, a
 
 - Time: O(VE).
 - Supports negative edge weights.
-- A negative cycle reachable from the source means no finite shortest distance exists for vertices affected by that cycle.
+- A **negative cycle** is a cycle whose edge weights add up to less than zero. If it is reachable from the source, repeatedly travelling around it can keep reducing the total path cost, so affected vertices do not have a finite shortest distance.
 
 ## 14. Floyd-Warshall
 
-Let dist[i][j] be the best known distance from i to j. Process possible intermediate vertices k one at a time:
+Let `dist[i][j]` be the best known distance from `i` to `j`. **All-pairs shortest paths** means finding shortest distances for every possible start and destination pair. Process possible intermediate vertices `k` one at a time:
 
 dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
 
