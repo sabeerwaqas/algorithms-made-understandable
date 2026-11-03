@@ -3,6 +3,8 @@
 **VU LMS index:** 44–46  
 **Prerequisites:** graph basics, discrete mathematics, and the meaning of polynomial-time algorithms.
 
+**New to a term?** See the [plain-language glossary](../docs/glossary.md).
+
 Complexity theory studies how much computational resource problems require as input size grows. This chapter introduces decision problems, P and NP, polynomial-time reductions, and classic examples.
 
 ## 1. P and NP
