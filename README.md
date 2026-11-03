@@ -6,7 +6,7 @@ A visual, beginner-first companion to Virtual University of Pakistan's **CS502 �
 
 The goal is not to collect the largest number of solutions. It is to make each topic understandable enough that a learner can continue independently.
 
-[Start here](#start-here) · [Course index](#course-index-vu-lms-order) · [Run Java examples](#run-the-java-examples) · [Sources](SOURCES.md)
+[Start here](#start-here) · [Course index](#course-index-vu-lms-order) · [Plain-language glossary](docs/glossary.md) · [Run Java examples](#run-the-java-examples) · [Sources](SOURCES.md)
 
 ## The problem this repository solves
 
@@ -23,9 +23,10 @@ This repository brings those steps together: **problem → motivation → intuit
 ## Start here
 
 1. Read [How to learn from this repository](docs/how-to-learn.md).
-2. Study [Foundations: algorithms, the RAM model, 2-D Maxima, runtime analysis, and asymptotic notation](01-foundations/README.md).
-3. Run the 2-D Maxima demonstration and tests.
-4. Continue to [Sorting and Selection](02-sorting-and-selection/README.md).
+2. Keep the [plain-language glossary](docs/glossary.md) nearby when you meet an unfamiliar term.
+3. Study [Foundations: algorithms, the RAM model, 2-D Maxima, runtime analysis, and asymptotic notation](01-foundations/README.md).
+4. Run the 2-D Maxima demonstration and tests.
+5. Continue to [Sorting and Selection](02-sorting-and-selection/README.md).
 
 **Suggested background:** basic Java syntax, variables, loops, methods, arrays, and simple mathematical notation. The foundation guide introduces the analysis ideas used later.
 
