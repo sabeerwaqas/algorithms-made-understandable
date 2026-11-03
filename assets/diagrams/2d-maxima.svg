@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="450" viewBox="0 0 760 450" role="img" aria-labelledby="title desc">
+<title id="title">Two-dimensional maxima example</title>
+<desc id="desc">A scatter plot with three maximal points forming a trade-off frontier. A point is dominated when another point is at least as large on both axes and strictly larger on one.</desc>
+<rect width="760" height="450" fill="#ffffff"/>
+<text x="44" y="38" font-family="Arial" font-size="22" font-weight="700" fill="#172033">2-D Maxima: keep the non-dominated points</text>
+<text x="44" y="65" font-family="Arial" font-size="14" fill="#475569">A point is dominated when another point is no worse on both axes and better on at least one.</text>
+<g stroke="#e2e8f0" stroke-width="1">
+<path d="M90 110V370H680"/>
+<path d="M180 110V370M270 110V370M360 110V370M450 110V370M540 110V370M630 110V370"/>
+<path d="M90 305H680M90 240H680M90 175H680M90 110H680"/>
+</g>
+<g font-family="Arial" font-size="13" fill="#64748b">
+<text x="84" y="392">0</text><text x="174" y="392">1</text><text x="264" y="392">2</text><text x="354" y="392">3</text><text x="444" y="392">4</text><text x="534" y="392">5</text><text x="624" y="392">6</text>
+<text x="64" y="375">0</text><text x="64" y="310">1</text><text x="64" y="245">2</text><text x="64" y="180">3</text><text x="64" y="115">4</text>
+<text x="690" y="375">x</text><text x="73" y="100">y</text>
+</g>
+<polyline points="270,110 450,175 630,305" fill="none" stroke="#16a34a" stroke-width="3" stroke-dasharray="7 6"/>
+<g fill="#ef4444" stroke="#fff" stroke-width="2">
+<circle cx="180" cy="305" r="8"/><circle cx="360" cy="305" r="8"/>
+<circle cx="540" cy="370" r="8"/><circle cx="270" cy="240" r="8"/>
+</g>
+<g fill="#16a34a" stroke="#fff" stroke-width="2">
+<circle cx="270" cy="110" r="10"/><circle cx="450" cy="175" r="10"/><circle cx="630" cy="305" r="10"/>
+</g>
+<g font-family="Arial" font-size="14" fill="#334155">
+<text x="282" y="101">(2, 4)</text><text x="462" y="166">(4, 3)</text><text x="642" y="300">(6, 1)</text>
+<text x="44" y="423" fill="#16a34a">Green: maximal points</text><text x="260" y="423" fill="#dc2626">Red: dominated points</text>
+<text x="480" y="423" fill="#64748b">Schematic example</text>
+</g>
+</svg>
