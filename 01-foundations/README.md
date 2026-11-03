@@ -88,6 +88,36 @@ The maximal set is {(2, 5), (3, 4), (4, 1)}.
 
 ![2-D Maxima example: incomparable maximal points form a frontier](../assets/diagrams/2d-maxima.svg)
 
+## Why do we study 2-D Maxima?
+
+The goal is not to memorize a special points problem. The goal is to learn how an algorithm designer thinks.
+
+### A simple real-world picture
+
+Suppose you are comparing products using two criteria: **performance** and **price**. Higher performance is better, but lower price is better. One product may be faster but more expensive; another may be slower but cheaper.
+
+A product is a poor choice if another product is both at least as fast and no more expensive, and is strictly better in at least one of those ways. The products that are not beaten in this way form the set of **non-dominated choices** (also called the Pareto frontier).
+
+To use the 2-D Maxima definition, represent each product as a point where:
+- x = performance (higher is better);
+- y = negative price (higher means cheaper).
+
+Now, larger x and larger y are both better, matching the mathematical definition above.
+
+### Why is this problem in an algorithms course?
+
+It gives us a small, visual problem through which we can practise several important skills:
+
+1. **Turn a real question into a precise problem.** What does it mean for one choice to be better than another?
+2. **Start with a simple correct solution.** Compare every point with every other point.
+3. **Measure the cost.** Understand why checking all pairs can require about n² comparisons.
+4. **Find useful structure.** Notice that sorting points by x lets us avoid many repeated comparisons.
+5. **Improve and justify the solution.** Use a sweep-line approach and explain why it returns the same maximal points in O(n log n) time.
+
+The same non-dominated-choice idea appears in multi-objective optimization: for example, comparing designs by cost and quality, schedules by time and resource use, or services by latency and price. Real applications may have more than two criteria, but the 2-D version is easier to draw and reason about.
+
+**The main lesson:** algorithm design is not just writing steps that produce the right answer. It is finding a way to produce that answer with less work as the input grows. 2-D Maxima is an introductory example that lets us see this improvement clearly.
+
 ## 4. The first solution: brute force
 
 ### Intuition
