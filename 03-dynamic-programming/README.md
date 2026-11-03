@@ -3,18 +3,18 @@
 **VU LMS index:** 17–23  
 **Prerequisites:** recursion, arrays, recurrence relations, and basic complexity analysis.
 
-Dynamic programming (DP) is useful when a problem can be expressed through smaller subproblems and those subproblems overlap. Instead of solving the same subproblem repeatedly, store its result and reuse it.
+Dynamic programming (DP) is useful when a problem can be expressed through smaller subproblems and those subproblems **overlap** — the same smaller question is needed more than once. Instead of solving that question repeatedly, store its result and reuse it.
 
 ## A DP design checklist
 
 For each problem, answer these questions in order:
 
-1. **State:** what does one subproblem represent?
+1. **State:** what does one subproblem represent? (For example, what does `dp[i][w]` mean?)
 2. **Choice:** what decisions are available?
-3. **Transition:** how does a state depend on smaller states?
-4. **Base cases:** what values are already known?
-5. **Evaluation order:** in what order can dependencies be computed?
-6. **Reconstruction:** do we need only the best value, or the actual choices too?
+3. **Transition:** what rule calculates this state from smaller states?
+4. **Base cases:** which answers are already known and need no further work?
+5. **Evaluation order:** in what order can the required states be calculated?
+6. **Reconstruction:** do we need only the best value, or the actual choices that produce it?
 
 Do not start by filling a table. First define what each table cell means.
 
@@ -24,7 +24,7 @@ The sequence is defined by F(0)=0, F(1)=1, and F(n)=F(n−1)+F(n−2) for n ≥ 
 
 A direct recursive implementation recomputes values. For example, F(5) needs F(3) through both F(4) and F(3) again.
 
-Memoization stores results from top-down recursion. Tabulation fills values from the base cases upward.
+**Memoization** means solving recursively and saving each result so it can be reused. **Tabulation** means filling a table from small, already-known cases toward the answer.
 
 | Approach | Time | Extra space |
 |---|---:|---:|
@@ -85,7 +85,7 @@ For matrices:
 
 A1(A2A3) costs 30·5·60 + 10·30·60 = 9,000 + 18,000 = 27,000 multiplications.
 
-The aim is not to change the order of matrices; it is to choose the cheapest parenthesization.
+The aim is not to change the order of matrices; it is to choose the cheapest **parenthesization** — the way parentheses group the multiplications. A scalar multiplication is one multiplication of two individual numbers.
 
 ### State and recurrence
 
@@ -130,13 +130,13 @@ Base case: dp[0][w] = 0.
 - Time: O(nW).
 - Space: O(nW) for the full table, reducible to O(W) with a one-dimensional array.
 
-**Important:** O(nW) is pseudo-polynomial. W is a numeric capacity, and the number of bits needed to represent W is only logarithmic in W.
+**Important:** O(nW) is called **pseudo-polynomial**. It is polynomial in the numeric value of capacity `W`, but not necessarily in the number of bits needed to write `W`. That distinction matters when `W` is very large.
 
 When using a one-dimensional array, iterate capacity downward. Iterating upward would allow the current item to be reused, turning the solution into an unbounded knapsack variant.
 
 ## Distinguishing DP from brute force
 
-Brute force may enumerate every combination. DP identifies repeated states and computes each state once.
+**Brute force** may try every possible combination. DP identifies smaller questions that appear repeatedly and computes each one once.
 
 Ask:
 - Do different paths reach the same subproblem?
