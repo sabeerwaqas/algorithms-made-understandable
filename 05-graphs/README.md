@@ -3,6 +3,8 @@
 **VU LMS index:** 28–43  
 **Prerequisites:** arrays, queues, stacks, recursion, heaps, and asymptotic analysis.
 
+**New to a term?** See the [plain-language glossary](../docs/glossary.md).
+
 Graphs model relationships. A graph consists of vertices (objects) and edges (relationships). Graph algorithms answer questions about reachability, dependencies, connectivity, spanning networks, and shortest routes.
 
 ## 1. Graph vocabulary
