@@ -1,6 +1,6 @@
 # How to learn from this repository
 
-This repository is designed for independent study. Follow the steps in order; do not jump directly to the Java solution.
+This repository is designed for independent study. Follow the steps in order; do not jump directly to the Java solution. You are not expected to know every technical phrase before starting. Important terms are explained in simple language when they first matter; the [plain-language glossary](glossary.md) is available whenever you need another explanation.
 
 ## A repeatable study session
 
@@ -34,7 +34,7 @@ A visual is an aid to reasoning, not a substitute for it.
 
 ## What to do when stuck
 
-Reduce the example size. For a graph, use three or four vertices. For an array, use four or five values. For dynamic programming, fill a tiny table by hand. If you cannot explain what each variable represents, return to the problem statement rather than adding more code.
+If a phrase is unfamiliar, do not skip it or assume you should already know it. Check the [plain-language glossary](glossary.md), then return to the sentence and example where the term is used. Reduce the example size. For a graph, use three or four vertices. For an array, use four or five values. For dynamic programming, fill a tiny table by hand. If you cannot explain what each variable represents, return to the problem statement rather than adding more code.
 
 ## Mastery check
 
