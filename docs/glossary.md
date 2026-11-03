@@ -33,9 +33,10 @@ The explanations below use small, everyday descriptions. Formal definitions and 
 | **Recursion** | A method or algorithm solves a problem by calling itself on a smaller version of that problem. |
 | **Recurrence** | An equation that describes an algorithm's cost using the cost of smaller inputs, such as T(n) = 2T(n/2) + n. |
 | **Stable sorting** | Equal-valued items keep their original relative order after sorting. This matters when items have other fields. |
-| **In-place algorithm** | An algorithm that uses only a small, constant amount of extra working memory, rather than another array proportional to the input size. |
+| **In-place algorithm** | An algorithm that rearranges data within its existing storage instead of allocating another input-sized structure. Some definitions exclude the recursion stack; check the space bound stated for the specific algorithm. |
 | **Pivot** | A chosen value used to divide an array during partitioning. |
-| **Partition** | Rearrange an array around a pivot so values are placed on the appropriate sides. The exact handling of equal values depends on the partition method. |
+| **Partition** | Rearrange an array around a pivot so values are placed on the appropriate sides. The exact handling of equal values depends on the partition method.
+| **Randomized pivot** | A pivot selected using randomness. This makes repeatedly unbalanced partitions less likely, but does not remove the theoretical worst case. |
 | **Complete binary tree** | A binary tree where every level is full except possibly the last, and the last level is filled from left to right. |
 | **Heap** | A complete binary tree arranged so each parent follows an ordering rule relative to its children. In a max-heap, a parent is at least as large as its children. |
 | **Priority queue** | A structure that lets us efficiently retrieve the item with the highest or lowest priority. |
@@ -79,7 +80,7 @@ The explanations below use small, everyday descriptions. Formal definitions and 
 | Term | Plain-language meaning |
 |---|---|
 | **Decision problem** | A problem whose answer is yes or no. |
-| **Polynomial time** | Running time bounded by a polynomial such as n, n², or n³. It is commonly used as a mathematical definition of efficient solvability. |
+| **Polynomial time** | Running time bounded by a polynomial such as n, n², or n³. This is commonly treated as efficient in theoretical analysis, although a high-degree polynomial can still be slow in practice. |
 | **Certificate** | Evidence supplied with a proposed yes-answer that can be checked efficiently. For graph coloring, it is the proposed color assigned to each vertex. |
 | **Reduction** | A way to translate instances of one problem into another while preserving the answer. It lets us compare problem difficulty. |
 | **P** | Decision problems that can be solved in polynomial time. |
