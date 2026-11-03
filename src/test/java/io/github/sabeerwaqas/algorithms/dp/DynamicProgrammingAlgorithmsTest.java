@@ -25,7 +25,7 @@ class DynamicProgrammingAlgorithmsTest {
 
     @Test
     void knapsackDoesNotReuseAnItem() {
-        assertEquals(7, DynamicProgrammingAlgorithms.knapsack01(
+        assertEquals(9, DynamicProgrammingAlgorithms.knapsack01(
                 new int[]{2, 3, 4}, new int[]{4, 5, 6}, 5));
     }
 }
