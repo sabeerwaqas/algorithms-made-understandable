@@ -7,15 +7,15 @@ Complexity theory studies how much computational resource problems require as in
 
 ## 1. P and NP
 
-For this introduction, focus on **decision problems**: questions with a yes/no answer.
+For this introduction, focus on **decision problems**: questions with a yes/no answer, rather than questions asking for a particular arrangement or numeric optimum.
 
 ### P
 
-P is the class of decision problems that can be solved by a deterministic algorithm in polynomial time, such as O(n), O(n²), or O(n³).
+P is the class of decision problems that can be solved by a **deterministic algorithm** (one that follows defined steps, without guessing a path) in **polynomial time**, such as O(n), O(n²), or O(n³).
 
 ### NP
 
-NP is the class of decision problems for which a proposed yes-answer certificate can be verified in polynomial time.
+NP is the class of decision problems for which a proposed yes-answer can be checked in polynomial time using a **certificate** — supporting information that lets us verify the answer.
 
 Example: for graph coloring, a proposed assignment can be checked by inspecting every edge and confirming adjacent vertices have different colours.
 
@@ -25,7 +25,7 @@ Every problem in P is also in NP, because a solution can be computed and then ve
 
 ## 2. Polynomial-time reductions
 
-A reduction translates instances of one problem A into instances of another problem B so that the answer is preserved.
+A **reduction** translates an instance of one problem `A` into an instance of another problem `B` while preserving the answer. In plain language, it turns a question about `A` into an equivalent question about `B`.
 
 A ≤p B means:
 - a transformation from A instances to B instances can be computed in polynomial time;
@@ -57,8 +57,8 @@ A proposed set can be checked in polynomial time. The decision problem is NP-com
 
 ## Terms that must not be confused
 
-- **NP-hard:** every problem in NP can be reduced to it (under the relevant reduction definition); it need not itself be in NP.
-- **NP-complete:** both in NP and NP-hard.
+- **NP-hard:** at least as hard as every problem in NP, under the reduction being used. It does not have to be in NP itself.
+- **NP-complete:** both in NP and NP-hard — it is in the class whose proposed yes-answers can be checked efficiently, and it is at least as hard as every problem in NP.
 - **P:** efficiently solvable in polynomial time.
 - **NP:** yes-certificates can be verified in polynomial time.
 
