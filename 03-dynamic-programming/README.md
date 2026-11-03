@@ -3,6 +3,8 @@
 **VU LMS index:** 17–23  
 **Prerequisites:** recursion, arrays, recurrence relations, and basic complexity analysis.
 
+**New to a term?** See the [plain-language glossary](../docs/glossary.md).
+
 Dynamic programming (DP) is useful when a problem can be expressed through smaller subproblems and those subproblems **overlap** — the same smaller question is needed more than once. Instead of solving that question repeatedly, store its result and reuse it.
 
 ## A DP design checklist
