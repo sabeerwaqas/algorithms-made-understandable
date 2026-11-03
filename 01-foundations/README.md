@@ -20,7 +20,7 @@ A good algorithm description specifies:
 
 ### Why study algorithm design?
 
-When software becomes slow, changing syntax or buying faster hardware may not fix a poor underlying approach. A design that performs a quadratic number of comparisons can become impractical as input grows. Algorithm analysis helps compare designs before relying on machine-specific timings.
+When software becomes slow, changing syntax or buying faster hardware may not fix a poor underlying approach. A design that performs a **quadratic number of comparisons** can become impractical as input grows. In plain language, the comparison count grows roughly like `n × n`: doubling the number of input points can make the work about four times larger. Algorithm analysis helps compare designs before relying on machine-specific timings.
 
 The course focuses on two resources:
 - **Time:** how the number of basic operations grows.
@@ -40,13 +40,13 @@ Real systems also care about I/O, networks, energy, cache behaviour, and maintai
 
 Different machines, languages, compilers, and operating systems have different speeds. To compare algorithms independently of those details, use an idealized **Random Access Machine (RAM)** model.
 
-In the common unit-cost RAM model:
+In the common **unit-cost RAM model** (each listed basic operation is counted as one step):
 - one processor executes instructions sequentially;
 - accessing an array element, assigning a variable, comparing two values, and basic arithmetic each take constant time;
 - memory can be accessed directly by index;
 - analysis counts how often basic operations occur as input grows.
 
-This is an abstraction. Real machines have caches, different instruction costs, finite memory, and arbitrary-precision arithmetic may not take constant time.
+This is an abstraction — a simplified model, not a claim about how every real computer behaves. Real machines have caches, different instruction costs, finite memory, and arbitrary-precision arithmetic may not take constant time.
 
 **Do not confuse:** O(1) in the RAM model does not mean every real-world operation takes the same number of nanoseconds.
 
@@ -71,7 +71,7 @@ Given a finite set of points P in the plane, q **dominates** p when:
 
 A point is **maximal** if no other point in P dominates it.
 
-Maximal does not mean that a point has the largest x and largest y simultaneously. Several points can be maximal because they represent different trade-offs.
+Maximal does not mean that a point has the largest x and largest y simultaneously. Several points can be maximal because they represent different trade-offs (one may be better on x while another is better on y). Two points are **incomparable** when neither dominates the other.
 
 Example:
 
@@ -114,13 +114,13 @@ MAXIMA(P):
 
 ### Why does it take quadratic time?
 
-For each of n points, the inner loop may inspect all n points. That gives up to n × n comparisons.
+For each of `n` points, the inner loop may inspect all `n` points. That gives up to `n × n` comparisons. This is called **quadratic growth** because the count is proportional to `n²`, not because the algorithm performs a mysterious special operation. For example, doubling `n` makes the upper count roughly four times as large.
 
 The worst case occurs when no point is dominated, for example points whose x increases while y decreases. The inner loop cannot stop early for any candidate.
 
 Therefore:
 - worst-case time: Θ(n²);
-- auxiliary space: O(n) in the supplied Java implementation (it builds a unique input list and output list);
+- additional memory: O(n) in the supplied Java implementation (it builds a unique working list and a result list);
 - the nested-loop core itself needs O(1) extra space when reading the input directly.
 
 ## 5. Runtime analysis: why we need it and how to do it
@@ -136,7 +136,7 @@ Mathematical analysis asks:
 Use this sequence:
 
 1. **Define input size.** For 2-D Maxima, n is the number of points.
-2. **Choose a basic operation.** For example, a point comparison.
+2. **Choose a basic operation.** This is the repeated action being counted, such as comparing two points.
 3. **Count executions.** Derive how many times that operation runs.
 4. **Write a function.** Express the count in terms of n.
 5. **Simplify.** Keep the dominant growth rate.
@@ -183,6 +183,8 @@ The constants depend on which primitive operations are counted. The n² term dom
 **Important:** Big-O is not a stopwatch measurement. It describes how a cost function grows. Benchmarking is a separate experiment.
 
 ## 6. Improving the solution: plane sweep
+
+A **sweep line** is an imaginary line that moves across the points in a chosen order. The algorithm processes points as the line passes them; it does not need to physically draw or move a line.
 
 ### The observation
 
@@ -246,7 +248,7 @@ The improvement comes from sorting once and then scanning, rather than comparing
 
 ## 7. Asymptotic notation
 
-Asymptotic notation describes growth for large n. It allows us to ignore constants and lower-order terms when comparing algorithmic growth.
+**Asymptotic notation** describes how work grows as the input becomes large. It helps compare the growth of algorithms without focusing on exact seconds, small constant differences, or the particular computer being used.
 
 | Notation | Meaning | Informal reading |
 |---|---|---|
@@ -269,7 +271,7 @@ O(1), O(log n), O(n), O(n log n), O(n²), O(n³), O(2ⁿ), O(n!).
 For T(n) = 5n³ + 10n² + 8:
 1. Ignore constant multipliers.
 2. Ignore lower-order terms.
-3. Keep the fastest-growing term.
+3. Keep the **dominant term** — the term that grows fastest as `n` increases.
 
 Result: Θ(n³).
 
