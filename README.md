@@ -36,6 +36,7 @@ The table preserves the order and wording of the 48 items in the supplied LMS in
 
 | LMS index | University topic | Learning guide |
 |---:|---|---|
+| **Foundations (Lectures 2–7)** |  |  |
 | 1 | Welcome Note | [How to learn](docs/how-to-learn.md) |
 | 2 | Introduction | [Algorithm foundations](01-foundations/README.md#1-introduction) |
 | 3 | Model of computation, 2-D maxima | [RAM model and 2-D Maxima](01-foundations/README.md#2-model-of-computation-the-ram-model) |
@@ -43,6 +44,7 @@ The table preserves the order and wording of the 48 items in the supplied LMS in
 | 5 | Runtime analysis | [Why and how runtime is analysed](01-foundations/README.md#5-runtime-analysis-why-we-need-it-and-how-to-do-it) |
 | 6 | 2-D maxima: sweep line algorithm | [Plane sweep](01-foundations/README.md#6-improving-the-solution-plane-sweep) |
 | 7 | Asymptotic Notation | [Growth rates](01-foundations/README.md#7-asymptotic-notation) |
+| **Sorting and Selection (Lectures 8–17)** |  |  |
 | 8 | Asymptotic notation, merge sort | [Merge Sort](02-sorting-and-selection/README.md#1-merge-sort) |
 | 9 | Analysis of Merge Sort | [Merge Sort analysis](02-sorting-and-selection/README.md#2-merge-sort-analysis) |
 | 10 | Solving recurrence relations, median selection | [Recurrences and selection](02-sorting-and-selection/README.md#3-recurrences-and-selection) |
@@ -53,17 +55,20 @@ The table preserves the order and wording of the 48 items in the supplied LMS in
 | 15 | Analysis of quick sort | [Quick Sort analysis](02-sorting-and-selection/README.md#8-quick-sort-analysis) |
 | 16 | Lower bounds for sorting, Linear time sorting, counting sort | [Lower bounds and Counting Sort](02-sorting-and-selection/README.md#9-sorting-lower-bounds-and-counting-sort) |
 | 17 | Bucket sort, radix sort, dynamic programming, Fibonacci sequence | [Bucket and Radix Sort](02-sorting-and-selection/README.md#10-bucket-sort-and-radix-sort) · [Fibonacci](03-dynamic-programming/README.md#1-fibonacci) |
+| **Dynamic Programming (Lectures 18–23)** |  |  |
 | 18 | Dynamic programming - edit distance | [Edit Distance](03-dynamic-programming/README.md#2-edit-distance) |
 | 19 | Dynamic programming - edit distance algorithm | [Edit Distance algorithm](03-dynamic-programming/README.md#2-edit-distance) |
 | 20 | Dynamic programming - chain matrix multiply | [Matrix-chain multiplication](03-dynamic-programming/README.md#3-matrix-chain-multiplication) |
 | 21 | Dynamic programming - chain matrix multiply | [Matrix-chain walkthrough](03-dynamic-programming/README.md#3-matrix-chain-multiplication) |
 | 22 | Dynamic programming - 0/1 knapsack | [0/1 Knapsack](03-dynamic-programming/README.md#4-01-knapsack) |
 | 23 | Dynamic programming - 0/1 knapsack | [0/1 Knapsack implementation](03-dynamic-programming/README.md#4-01-knapsack) |
+| **Greedy Algorithms (Lectures 24–28)** |  |  |
 | 24 | Greedy algorithms - coin change problem | [Coin change](04-greedy-algorithms/README.md#1-coin-change) |
 | 25 | Greedy algorithms - Huffman encoding | [Huffman encoding](04-greedy-algorithms/README.md#2-huffman-encoding) |
 | 26 | Greedy algorithms - Huffman encoding | [Huffman construction](04-greedy-algorithms/README.md#2-huffman-encoding) |
 | 27 | Greedy algorithms - Activity scheduling | [Activity selection](04-greedy-algorithms/README.md#3-activity-selection) |
 | 28 | Greedy algorithms - fractional knapsack, Graphs - definitions | [Fractional knapsack](04-greedy-algorithms/README.md#4-fractional-knapsack) · [Graph vocabulary](05-graphs/README.md#1-graph-vocabulary) |
+| **Graphs (Lectures 29–43)** |  |  |
 | 29 | Graphs - representations, traversal | [Graph representations](05-graphs/README.md#2-graph-representations) |
 | 30 | Graphs - breadth-first search, generic traversal algorithms | [BFS](05-graphs/README.md#3-breadth-first-search-bfs) |
 | 31 | Graphs - generic traversal algorithms | [General traversal pattern](05-graphs/README.md#4-the-general-traversal-pattern) |
@@ -79,12 +84,13 @@ The table preserves the order and wording of the 48 items in the supplied LMS in
 | 41 | Graphs - Dijkstra's algorithm, Bellman-Ford algorithm | [Dijkstra](05-graphs/README.md#12-dijkstras-algorithm) · [Bellman-Ford](05-graphs/README.md#13-bellman-ford) |
 | 42 | Graphs - all-pairs shortest path, Floyd-Warshall's algorithm | [Floyd-Warshall](05-graphs/README.md#14-floyd-warshall) |
 | 43 | Graphs - Floyd-Warshall algorithm | [Floyd-Warshall walkthrough](05-graphs/README.md#14-floyd-warshall) |
+| **Complexity Theory (Lectures 44–46)** |  |  |
 | 44 | Complexity theory - classes P, NP | [P and NP](06-complexity-theory/README.md#1-p-and-np) |
 | 45 | Complexity theory - Reductions, graph coloring | [Reductions and graph coloring](06-complexity-theory/README.md#2-polynomial-time-reductions) |
 | 46 | Complexity theory - Boolean satisfiability, independent sets | [SAT and independent set](06-complexity-theory/README.md#3-classic-decision-problems) |
+| **Revision and Assessment (Lectures 47–48)** |  |  |
 | 47 | UVAS Spring 2010 (Lecture 1-27) | [Revision guide](07-revision/README.md) |
 | 48 | Pre-Assessment | [Self-assessment](07-revision/README.md#self-assessment) |
-
 ## Visual learning
 
 ### 2-D Maxima — keeping only non-dominated points
