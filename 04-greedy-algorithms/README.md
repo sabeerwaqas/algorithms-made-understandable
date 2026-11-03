@@ -3,6 +3,8 @@
 **VU LMS index:** 24–28  
 **Prerequisites:** sorting, priority queues, and basic proof reasoning.
 
+**New to a term?** See the [plain-language glossary](../docs/glossary.md).
+
 A greedy algorithm makes a **local choice** — the option that looks best at the current step — and commits to it. The goal is a **global optimum**, the best complete solution. A local choice does not always lead to a global optimum, so the choice needs a proof.
 
 ## 1. Coin change
